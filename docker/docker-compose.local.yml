@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+  app.bijak:
+    restart: always
+    image: 638615282713.dkr.ecr.ap-south-1.amazonaws.com/create_ticket:local
+    container_name: create-ticket-local
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile.local
+    volumes:
+      - ..:/usr/node/app
+      - ~/.aws:/usr/node/.aws:ro
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+    environment:
+      - env=dev
+      - DEBUG=true
+    networks:
+      - bijak_network
+networks:
+  bijak_network:

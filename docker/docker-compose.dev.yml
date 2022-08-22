@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  app.bijak:
+    restart: always
+    image: 638615282713.dkr.ecr.ap-south-1.amazonaws.com/trade-service:dev
+    container_name: trade-service-dev
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile
+      target: final
+      args:
+        - env=dev
+    volumes:
+      - ..:/home/node/app
+      - ~/.aws:/home/node/.aws:ro
+    ports:
+      - '3004:3004'
+    stdin_open: true
+    tty: true
+    environment:
+      - env=dev
+      - DEBUG=true
+    networks:
+      - bijak_network
+networks:
+  bijak_network:

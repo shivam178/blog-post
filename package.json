@@ -1,0 +1,22 @@
+{
+  "name": "blog-post",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "concurrently \"cd server && npm start\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivam178/blog-post.git"
+  },
+  "author": "Shivam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shivam178/blog-post/issues"
+  },
+  "homepage": "https://github.com/shivam178/blog-post#readme",
+  "dependencies": {
+    "concurrently": "^7.3.0"
+  }
+}

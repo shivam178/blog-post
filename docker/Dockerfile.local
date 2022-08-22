@@ -1,0 +1,14 @@
+FROM node:14-alpine
+
+ENV LDFLAGS="-L/usr/local/opt/openssl/lib"
+ENV CPPFLAGS="-I/usr/local/opt/openssl/include"
+ENV DOCKER_REGISTRY="638615282713.dkr.ecr.ap-south-1.amazonaws.com"
+
+WORKDIR /usr/node/app
+COPY package.json ./
+COPY tsconfig.json ./
+COPY . .
+RUN npm install
+RUN npm install --g nodemon concurrently
+
+CMD ["npm", "start"]
