@@ -1,4 +1,4 @@
-import React ,{useState} from 'react'
+import React, { useState } from 'react'
 
 function BlogDetails({ details, type, backtoHome, createBlog }) {
     const [value, setValue] = useState('');
@@ -11,17 +11,17 @@ function BlogDetails({ details, type, backtoHome, createBlog }) {
                         <div>
                             <nav>
                                 <button onClick={() => backtoHome()}><img src="../assets/Group.svg" /></button>
-                                <button onClick={() => createBlog(title,value)}><img src="../assets/home.svg" /></button>
+                                <button onClick={() => createBlog(title, value)}><img src="../assets/home.svg" /></button>
                             </nav>
                         </div>
                         <div className="editor">
                             <div className="editingtools"></div>
-                            <input 
-                            type='text'
-                            value={title}
-                            onChange={(e) => {
-                                setTitle(e.target.value);
-                            }}/>
+                            <input
+                                type='text'
+                                value={title}
+                                onChange={(e) => {
+                                    setTitle(e.target.value);
+                                }} />
                             <textarea type='text'
                                 value={value}
                                 onChange={(e) => {
@@ -31,9 +31,9 @@ function BlogDetails({ details, type, backtoHome, createBlog }) {
                     </div>
                     :
                     <>
-                    <aside>
-                     <button onClick={() => backtoHome()}><img src="../assets/home.svg" /></button>   
-                    </aside>
+                        <aside>
+                            <button onClick={() => backtoHome()}><img src="../assets/home.svg" /></button>
+                        </aside>
                         <div className='blog-heading'>
                             <h2>{details.title}</h2>
                             {details.content}
@@ -43,4 +43,5 @@ function BlogDetails({ details, type, backtoHome, createBlog }) {
         </div>
     )
 }
+
 export default BlogDetails;
