@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import BlogDetails from './BlogDetails'
 import BlogItem from './BlogItem'
+import { getblogData,createBlog } from "../api";
 
 function Home() {
     const [showBlogDetails, setShowBlog] = useState(true)
@@ -16,8 +17,16 @@ function Home() {
 
     ])
     useEffect(() => {
+       // getBlogData();
         setBlogItems(blogItems)
     }, [blogType])
+
+    const getBlogData = async () => {
+            try {
+                const data = await getblogData();
+                setBlogItems(data)
+            }catch (err) { }
+    }
     const OnShowBlogClick = (item) => {
         console.log('sadas')
         setShowBlog(false);
@@ -28,10 +37,19 @@ function Home() {
         setShowBlog(true)
         selectBlog({})
     }
-    const createNewBlog = ()=>{
+    const NewBlogScreen = ()=>{
         setShowBlog(false)
         setBlogType('new')
         selectBlog({})
+    }
+    const createNewBlog=(title,content)=>{
+        const data ={
+            postTitle: title,
+            postData: content,
+        }
+        createBlog(data)
+        setShowBlog(true)
+        getBlogData();
     }
     return (
         <div>
@@ -40,6 +58,7 @@ function Home() {
             </header>
             {
                 showBlogDetails ?
+                <div>
                     <div className="items">
                         {blogItems.map((item, index) => (
                             <BlogItem
@@ -47,16 +66,17 @@ function Home() {
                                 OnShowBlogClick={OnShowBlogClick}
                             />
                         ))}
-                         <div className="create-blog">
-            <button onClick={()=>createNewBlog()}><img src="../assets/create.svg"/></button>
-            </div>
                     </div>
-                    
+                      <div className="create-blog">
+                      <button onClick={()=>NewBlogScreen()}><img src="../src/assets/create.svg"/></button>
+                      </div>
+                      </div>
                     :
                     <BlogDetails
                         details={selectedBlog}
                         type={blogType}
-                        backtoHome={backtoHome} />
+                        backtoHome={backtoHome}
+                        createBlog={createNewBlog} />
             }
 
         </div>
