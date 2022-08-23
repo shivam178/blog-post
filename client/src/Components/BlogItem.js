@@ -4,7 +4,7 @@ function BlogItem({details,OnShowBlogClick}) {
 
   return (
     <div className='blog-item'  onClick={() => OnShowBlogClick(details)}>
-        <h3>{details.title}</h3>
+        <h2>{details.title}</h2>
     </div>
   )
 }

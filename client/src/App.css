@@ -21,15 +21,65 @@ header{
   align-items: center;
   display: flex;
 }
-.blog-item h3{
+.blog-item h2{
   margin-left: 7rem;
 }
 .blog-heading{
   display: flex;
-  justify-content: space-around;
-  margin-right: 26rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 4rem;
+  left: 35rem;
 }
-.details{
+.blog-heading h2{
+  margin-top: 3rem;
+}
+
+.create-blog button{
+  position: fixed;
+  margin-left: 35rem;
+  height: 2rem;
+}
+nav{
   display: flex;
   flex-direction: column;
+  width: 3rem;
+  margin-top: 30px;
+  margin-left: 12px;
+}
+nav button{
+  width: 3rem;
+  height: 3rem;
+  margin-top: 1rem;
+}
+.editor{
+  position: absolute;
+  top: 7rem;
+  left: 19rem;
+  background-color: lightgray;
+  width: 37rem;
+}
+.editingtools{
+  background-color: lightgray;
+  height: 2rem;
+  width: 35rem;
+}
+textarea{
+  width: 35rem;
+  height: 10rem;
+  background-color: lightgray;
+  border: 0px;
+}
+input{
+  width: 35rem;
+  height: 2rem;
+  background-color: lightgray;
+  border: 0px;
+}
+aside{
+  display: flex;
+  margin-top: 2rem;
+  margin-left: 2rem;
 }
