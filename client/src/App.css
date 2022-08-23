@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+}
+header{
+  display: flex;
+    background-color: lightgray;
+}
+.items{
+  display: flex;
+  justify-content: space-around;
+  flex-flow:row wrap;  
+  margin-top:2rem;
+}
+.blog-item{
+  height: 10rem;
+  width: 20rem;
+  margin-top: 4rem;
+  margin-left: 15px;
+  background-color: lightgray;
+  border-radius: 5%;
+  align-items: center;
+  display: flex;
+}
+.blog-item h3{
+  margin-left: 7rem;
+}
+.blog-heading{
+  display: flex;
+  justify-content: space-around;
+  margin-right: 26rem;
+}
+.details{
+  display: flex;
+  flex-direction: column;
+}
