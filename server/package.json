@@ -4,12 +4,10 @@
   "description": "test",
   "main": "app.ts",
   "scripts": {
-    "build": "mkdir -p ./build && tsc --project .",
+    "build": "mkdir -p ./serverBuild && tsc --project .",
     "start:build": "tsc -w",
     "start": "cross-env NODE_ENV=dev LOCAL_ENV=local NEW_RELIC_ENABLED=false nodemon app.ts",
-    "start:dev": "cross-env NODE_ENV=dev PORT=3005 nodemon app.js",
-    "start:staging": "cross-env NODE_ENV=staging PORT=3005 nodemon app.js",
-    "start:prod": "cross-env NODE_ENV=prod PORT=3005 nodemon app.js"
+    "start:dev": "cross-env NODE_ENV=dev PORT=8080 nodemon app.js"
   },
   "author": "shivam",
   "license": "ISC",

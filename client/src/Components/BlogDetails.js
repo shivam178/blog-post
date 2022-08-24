@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import homeSvg from '../assets/home.svg'
+import grpSvg from '../assets/Group.svg'
+
 
 function BlogDetails({ details, type, backtoHome, createBlog }) {
     const [value, setValue] = useState('');
@@ -10,8 +13,8 @@ function BlogDetails({ details, type, backtoHome, createBlog }) {
                     <div className="newpost">
                         <div>
                             <nav>
-                                <button onClick={() => backtoHome()}><img src="../assets/Group.svg" /></button>
-                                <button onClick={() => createBlog(title, value)}><img src="../assets/home.svg" /></button>
+                                <button onClick={() => backtoHome()}><img src={homeSvg} alt='home' /></button>
+                                <button onClick={() => createBlog(title, value)}><img src={grpSvg} alt='create' /></button>
                             </nav>
                         </div>
                         <div className="editor">
@@ -32,11 +35,11 @@ function BlogDetails({ details, type, backtoHome, createBlog }) {
                     :
                     <>
                         <aside>
-                            <button onClick={() => backtoHome()}><img src="../assets/home.svg" /></button>
+                            <button onClick={() => backtoHome()}><img src={homeSvg} alt='home' />></button>
                         </aside>
                         <div className='blog-heading'>
-                            <h2>{details.title}</h2>
-                            {details.content}
+                            <h2>{details.postTitle}</h2>
+                            {details.postData}
                         </div>
                     </>
             }

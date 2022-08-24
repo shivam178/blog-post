@@ -1,11 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-function BlogItem({details,OnShowBlogClick}) {
-
+function BlogItem({ details, onShowBlogClick }) {
   return (
-    <div className='blog-item'  onClick={() => OnShowBlogClick(details)}>
-        <h2>{details.title}</h2>
+    <div className="blog-item" onClick={() => onShowBlogClick(details)}>
+      <h2>{details.postTitle}</h2>
     </div>
-  )
+  );
 }
 export default BlogItem;

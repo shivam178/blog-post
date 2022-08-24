@@ -4,6 +4,9 @@
   "description": "",
   "scripts": {
     "start": "concurrently \"cd server && npm start\" \"cd client && npm start\"",
+    "start:build": "concurrently \"cd server/serverBuild && npm start\" \"cd client/build && serve -l 3000\"",
+    "build": "concurrently \"cd server && npm run build\" \"cd client && npm run build\"",
+    "postinstall": "concurrently \"cd server && npm install\" \"cd client && npm install\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
