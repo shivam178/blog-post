@@ -35,7 +35,7 @@ function BlogDetails({ details, type, backtoHome, createBlog }) {
                     :
                     <>
                         <aside>
-                            <button onClick={() => backtoHome()}><img src={homeSvg} alt='home' />></button>
+                            <button onClick={() => backtoHome()}><img src={homeSvg} alt='home' /></button>
                         </aside>
                         <div className='blog-heading'>
                             <h2>{details.postTitle}</h2>
