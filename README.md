@@ -11,5 +11,5 @@ npm start
 ```
 ## Snapshots
 ![Alt text](./ss1.png?raw=true "Home Page")
-![Alt text](./ss.png?raw=true "Home Page")
+![Alt text](./ss2.png?raw=true "Home Page")
 
